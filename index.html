@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Практичні завдання з JavaScript</title>
+</head>
+<body>
+
+<h1>Практична робота 1</h1>
+<h2>Кащій Михайло</h2>
+
+<h2>1. Перевірка парності числа</h2>
+<p>Функція перевіряє, чи число парне або непарне, і виводить результат кольоровим текстом.</p>
+<button onclick="checkEvenOrOdd(7)">Перевірити число 7</button>
+
+<h2>2. Генерація пароля</h2>
+<p>Функція створює пароль на основі імені та номера у журналі (перші 3 літери імені + номер*2).</p>
+<button onclick="generatePassword('Олександр',7)">Створити пароль</button>
+
+<h2>3. Обчислення середнього бала</h2>
+<p>Функція приймає три оцінки через prompt, обчислює середнє та показує результат у div з вашим номером.</p>
+<button onclick="averageGrades(7)">Обчислити середнє</button>
+
+<h2>4. Введення студентів</h2>
+<p>Скрипт запитує кількість студентів, а потім їхні прізвища та імена, і показує їх у браузері.</p>
+<button onclick="enterStudents()">Ввести студентів</button>
+
+<script>
+function checkEvenOrOdd(n){
+ let p=document.createElement("p");
+ p.textContent=n%2===0?`Число ${n} парне`:`Число ${n} непарне`;
+ p.style.color=n%2===0?"green":"red";
+ document.body.appendChild(p);
+}
+
+function generatePassword(name,num){
+ let d=document.createElement("div");
+ d.textContent="Ваш пароль: "+name.slice(0,3)+(num*2);
+ document.body.appendChild(d);
+}
+
+function averageGrades(id){
+ let s=(+prompt("Оцінка 1")+ +prompt("Оцінка 2")+ +prompt("Оцінка 3"))/3;
+ let d=document.createElement("div");
+ d.id=id; d.textContent="Середній бал: "+s.toFixed(2);
+ document.body.appendChild(d);
+}
+
+function enterStudents(){
+ let n=+prompt("Кількість студентів:");
+ for(let i=1;i<=n;i++){
+  let st=prompt(`Студент №${i}:`);
+  let p=document.createElement("p");
+  p.textContent=i+". "+st;
+  document.body.appendChild(p);
+ }
+}
+</script>
+
+</body>
+</html>
