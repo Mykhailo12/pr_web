@@ -1,1 +1,25 @@
-<h1>widajoiwdjaoiwd</h1>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приклад JavaScript</title>
+</head>
+<body>
+    <script>
+        const userName = prompt("Введіть ваше ім'я:");
+        alert(`Привіт, ${userName}! Ласкаво просимо до JavaScript`);
+
+        const age = prompt("Введіть ваш вік:");
+        const currentYear = new Date().getFullYear();
+        const birthYear = currentYear - Number(age);
+        alert(`Ви народилися у ${birthYear}`);
+
+        const firstName = prompt("Введіть ваше ім'я:");
+        const lastName = prompt("Введіть ваше прізвище:");
+
+        console.log("Ваше повне ім'я: " + firstName + " " + lastName);
+        console.log(`Ваше повне ім'я: ${firstName} ${lastName}`);
+    </script>
+</body>
+</html>
